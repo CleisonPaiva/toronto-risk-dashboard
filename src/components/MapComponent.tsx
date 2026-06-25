@@ -15,7 +15,9 @@ import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
 import ScaleBar from '@arcgis/core/widgets/ScaleBar'
 import Home from '@arcgis/core/widgets/Home'
 
-export function MapComponent() {
+interface Props { onViewReady: (view: MapView) => void }
+
+export function MapComponent({ onViewReady }: Props) {
 
     const mapRef = useRef<HTMLDivElement>(null)
 
@@ -35,6 +37,15 @@ export function MapComponent() {
         })
 
         viewRef.current = view
+
+        view.on('click', (event) => {
+            view.hitTest(event).then((response) => {
+                // só limpa se clicou no mapa vazio (sem features)
+                if (response.results.length === 0) {
+                    view.graphics.removeAll()
+                }
+            })
+        })
 
         // Bairros — choropleth colorido por risk_count
         map.add(createNeighborhoodsLayer())
@@ -74,7 +85,7 @@ export function MapComponent() {
         const home = new Home({ view })
         view.ui.add(home, 'top-left')
 
-
+        onViewReady(view)
 
         return () => {
             view.destroy()
