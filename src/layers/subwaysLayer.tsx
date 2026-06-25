@@ -4,6 +4,7 @@ import { subwaysRenderer } from '../renderers/subwaysRenderer'
 const API_URL = import.meta.env.VITE_API_URL
 
 export function createSubwaysLayer(): GeoJSONLayer {
+
     return new GeoJSONLayer({
         url: `${API_URL}/api/subways`,
         title: 'Subways',

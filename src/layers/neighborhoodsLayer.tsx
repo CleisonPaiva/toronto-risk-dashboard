@@ -4,6 +4,7 @@ import { neighborhoodsRenderer } from '../renderers/neighborhoodsRenderer'
 const API_URL = import.meta.env.VITE_API_URL
 
 export function createNeighborhoodsLayer(): GeoJSONLayer {
+    
     return new GeoJSONLayer({
         url: `${API_URL}/api/neighborhoods`,
          title: 'Neighbourhoods',

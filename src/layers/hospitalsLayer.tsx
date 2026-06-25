@@ -4,6 +4,7 @@ import { hospitalsRenderer } from '../renderers/hospitalsRenderer'
 const API_URL = import.meta.env.VITE_API_URL
 
 export function createHospitalsLayer(): GeoJSONLayer {
+    
     return new GeoJSONLayer({
         url: `${API_URL}/api/hospitals`,
          title: 'Hospitals',
