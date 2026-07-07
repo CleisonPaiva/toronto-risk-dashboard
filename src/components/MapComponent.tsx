@@ -11,7 +11,7 @@ import { createSchoolsLayer } from '../layers/schoolsLayer'
 import { createSubwaysLayer } from '../layers/subwaysLayer'
 import { createFloodZonesLayer } from '../layers/floodZonesLayer'
 import Fullscreen from '@arcgis/core/widgets/Fullscreen'
-import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
+//import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
 import ScaleBar from '@arcgis/core/widgets/ScaleBar'
 import Home from '@arcgis/core/widgets/Home'
 
