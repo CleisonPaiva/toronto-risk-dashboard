@@ -63,9 +63,9 @@ export function MapComponent({ onViewReady }: Props) {
         view.ui.add(fullscreen, 'top-right')
 
         // BasemapGallery — permite trocar o basemap do mapa
-        const basemapGallery = new BasemapGallery({ view })
+        /*const basemapGallery = new BasemapGallery({ view })
         const expandBasemap = new Expand({ view, content: basemapGallery, expanded: false })
-        view.ui.add(expandBasemap, 'top-right')
+        view.ui.add(expandBasemap, 'top-right')*/
 
         // LayerList — controle de visibilidade das layers
         const layerList = new LayerList({ view })
